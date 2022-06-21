@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace DataAccessLayer_DAL
@@ -12,7 +7,7 @@ namespace DataAccessLayer_DAL
     {
         //public string connectionString = "Data source=.; user id =sa; " +
         //        "password=1; initial catalog =ProjectQLKTP12";
-        public string connectionString = "Data source=DESKTOP-5TICDNV\\NHPHONGPHU; user id =sa; " +
+        public string connectionString = "Data source=DESKTOP-8ID1E1D\\DUYJOHANNES; user id =sa; " +
                 "password=1; initial catalog =ProjectQLKTPDB";
         SqlConnection con = null;
 

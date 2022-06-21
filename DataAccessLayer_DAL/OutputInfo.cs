@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataAccessLayer_DAL
+﻿namespace DataAccessLayer_DAL
 {
     public class OutputInfo
     {
         //properties
         public int Id { get; set; }
-        public string IdFood { get; set; }
+        public int IdFood { get; set; }
         public int IdOutput { get; set; }
         public int IdInputInfo { get; set; }
         public int IdCustomer { get; set; }

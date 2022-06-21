@@ -1,7 +1,7 @@
 ﻿
 namespace PresentationLayer
 {
-    partial class FrmAddSuplier
+    partial class FrmSuplierDetail
     {
         /// <summary>
         /// Required designer variable.

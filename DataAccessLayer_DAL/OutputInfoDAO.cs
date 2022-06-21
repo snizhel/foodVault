@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer_DAL
 {
@@ -21,7 +17,11 @@ namespace DataAccessLayer_DAL
         //    return search("Input", "DisplayNameCustomer like '%" + name + "%' or " +
         //                              "DisplayNameCustomer like '%" + name + "%' ");
         //}
-
+        public DataSet searchByCustomerId(int id)
+        {
+            return search("OutputInfo", "IdCustomer like '%" + id + "%' or " +
+                                      "IdCustomer like '%" + id + "%' ");
+        }
 
         public SqlDataReader findById(string id)
         {
@@ -31,7 +31,7 @@ namespace DataAccessLayer_DAL
             return dr;
         }
 
-        public int deleteOutputInfo(string id)
+        public int deleteOutputInfo(int id)
         {
             try
             {

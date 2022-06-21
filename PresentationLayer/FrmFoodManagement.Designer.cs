@@ -33,13 +33,13 @@ namespace PresentationLayer
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFoodManagement));
             this.gv_Food = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.Status = new System.Windows.Forms.ToolStripStatusLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.pic_avatar = new System.Windows.Forms.PictureBox();
             this.txt_idfood = new System.Windows.Forms.TextBox();
             this.txt_namefood = new System.Windows.Forms.TextBox();
             this.txt_quantity = new System.Windows.Forms.TextBox();
@@ -47,6 +47,7 @@ namespace PresentationLayer
             this.date_start = new System.Windows.Forms.DateTimePicker();
             this.date_end = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pic_avatar = new System.Windows.Forms.PictureBox();
             this.btn_browse = new System.Windows.Forms.Button();
             this.list_image = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
@@ -85,26 +86,22 @@ namespace PresentationLayer
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
+            this.btn_deleteCustomer = new System.Windows.Forms.Button();
+            this.btn_updateCustomer = new System.Windows.Forms.Button();
+            this.btn_addCustomer = new System.Windows.Forms.Button();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.toolStrip9 = new System.Windows.Forms.ToolStrip();
             this.toolStripTextBox9 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.gv_CustomerTabsOutputInfoData = new System.Windows.Forms.DataGridView();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.toolStrip8 = new System.Windows.Forms.ToolStrip();
-            this.toolStripTextBox8 = new System.Windows.Forms.ToolStripTextBox();
+            this.txt_searchCustomer = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.lbl_searchCustomer = new System.Windows.Forms.ToolStripButton();
+            this.gv_CustomerDataSource = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -149,8 +146,9 @@ namespace PresentationLayer
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Food)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_avatar)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_avatar)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -167,14 +165,13 @@ namespace PresentationLayer
             this.toolStrip6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage5.SuspendLayout();
-            this.groupBox19.SuspendLayout();
             this.groupBox18.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.toolStrip9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_CustomerTabsOutputInfoData)).BeginInit();
             this.groupBox16.SuspendLayout();
             this.toolStrip8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_CustomerDataSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -205,11 +202,19 @@ namespace PresentationLayer
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Status});
             this.statusStrip1.Location = new System.Drawing.Point(0, 520);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1023, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // Status
+            // 
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(39, 17);
+            this.Status.Text = "Status";
             // 
             // label2
             // 
@@ -264,17 +269,6 @@ namespace PresentationLayer
             this.label8.Size = new System.Drawing.Size(53, 13);
             this.label8.TabIndex = 8;
             this.label8.Text = "ID Suplier";
-            // 
-            // pic_avatar
-            // 
-            this.pic_avatar.Image = ((System.Drawing.Image)(resources.GetObject("pic_avatar.Image")));
-            this.pic_avatar.Location = new System.Drawing.Point(87, 18);
-            this.pic_avatar.Margin = new System.Windows.Forms.Padding(2);
-            this.pic_avatar.Name = "pic_avatar";
-            this.pic_avatar.Size = new System.Drawing.Size(268, 147);
-            this.pic_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_avatar.TabIndex = 70;
-            this.pic_avatar.TabStop = false;
             // 
             // txt_idfood
             // 
@@ -350,6 +344,17 @@ namespace PresentationLayer
             this.groupBox1.TabIndex = 80;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Details";
+            // 
+            // pic_avatar
+            // 
+            this.pic_avatar.Image = ((System.Drawing.Image)(resources.GetObject("pic_avatar.Image")));
+            this.pic_avatar.Location = new System.Drawing.Point(87, 18);
+            this.pic_avatar.Margin = new System.Windows.Forms.Padding(2);
+            this.pic_avatar.Name = "pic_avatar";
+            this.pic_avatar.Size = new System.Drawing.Size(268, 147);
+            this.pic_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_avatar.TabIndex = 70;
+            this.pic_avatar.TabStop = false;
             // 
             // btn_browse
             // 
@@ -692,7 +697,6 @@ namespace PresentationLayer
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.groupBox19);
             this.tabPage5.Controls.Add(this.groupBox18);
             this.tabPage5.Controls.Add(this.groupBox17);
             this.tabPage5.Controls.Add(this.groupBox16);
@@ -703,50 +707,11 @@ namespace PresentationLayer
             this.tabPage5.Text = "Customer Buy Food";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // groupBox19
-            // 
-            this.groupBox19.Controls.Add(this.button22);
-            this.groupBox19.Controls.Add(this.button23);
-            this.groupBox19.Controls.Add(this.button24);
-            this.groupBox19.Location = new System.Drawing.Point(455, 374);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(539, 78);
-            this.groupBox19.TabIndex = 87;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Function";
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(182, 29);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(129, 34);
-            this.button22.TabIndex = 2;
-            this.button22.Text = "Delete";
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(92, 29);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(84, 34);
-            this.button23.TabIndex = 1;
-            this.button23.Text = "Update";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(6, 29);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(80, 34);
-            this.button24.TabIndex = 0;
-            this.button24.Text = "Add";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
             // groupBox18
             // 
-            this.groupBox18.Controls.Add(this.button19);
-            this.groupBox18.Controls.Add(this.button20);
-            this.groupBox18.Controls.Add(this.button21);
+            this.groupBox18.Controls.Add(this.btn_deleteCustomer);
+            this.groupBox18.Controls.Add(this.btn_updateCustomer);
+            this.groupBox18.Controls.Add(this.btn_addCustomer);
             this.groupBox18.Location = new System.Drawing.Point(6, 374);
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.Size = new System.Drawing.Size(443, 78);
@@ -754,43 +719,46 @@ namespace PresentationLayer
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Function";
             // 
-            // button19
+            // btn_deleteCustomer
             // 
-            this.button19.Location = new System.Drawing.Point(182, 29);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(129, 34);
-            this.button19.TabIndex = 2;
-            this.button19.Text = "Delete";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btn_deleteCustomer.Location = new System.Drawing.Point(311, 29);
+            this.btn_deleteCustomer.Name = "btn_deleteCustomer";
+            this.btn_deleteCustomer.Size = new System.Drawing.Size(129, 34);
+            this.btn_deleteCustomer.TabIndex = 2;
+            this.btn_deleteCustomer.Text = "Delete";
+            this.btn_deleteCustomer.UseVisualStyleBackColor = true;
+            this.btn_deleteCustomer.Click += new System.EventHandler(this.btn_deleteCustomer_Click);
             // 
-            // button20
+            // btn_updateCustomer
             // 
-            this.button20.Location = new System.Drawing.Point(92, 29);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(84, 34);
-            this.button20.TabIndex = 1;
-            this.button20.Text = "Update";
-            this.button20.UseVisualStyleBackColor = true;
+            this.btn_updateCustomer.Location = new System.Drawing.Point(157, 29);
+            this.btn_updateCustomer.Name = "btn_updateCustomer";
+            this.btn_updateCustomer.Size = new System.Drawing.Size(129, 34);
+            this.btn_updateCustomer.TabIndex = 1;
+            this.btn_updateCustomer.Text = "Update";
+            this.btn_updateCustomer.UseVisualStyleBackColor = true;
+            this.btn_updateCustomer.Click += new System.EventHandler(this.btn_updateCustomer_Click);
             // 
-            // button21
+            // btn_addCustomer
             // 
-            this.button21.Location = new System.Drawing.Point(6, 29);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(80, 34);
-            this.button21.TabIndex = 0;
-            this.button21.Text = "Add";
-            this.button21.UseVisualStyleBackColor = true;
+            this.btn_addCustomer.Location = new System.Drawing.Point(3, 29);
+            this.btn_addCustomer.Name = "btn_addCustomer";
+            this.btn_addCustomer.Size = new System.Drawing.Size(129, 34);
+            this.btn_addCustomer.TabIndex = 0;
+            this.btn_addCustomer.Text = "Add";
+            this.btn_addCustomer.UseVisualStyleBackColor = true;
+            this.btn_addCustomer.Click += new System.EventHandler(this.btn_addCustomer_Click);
             // 
             // groupBox17
             // 
             this.groupBox17.Controls.Add(this.toolStrip9);
-            this.groupBox17.Controls.Add(this.dataGridView8);
+            this.groupBox17.Controls.Add(this.gv_CustomerTabsOutputInfoData);
             this.groupBox17.Location = new System.Drawing.Point(455, 6);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(539, 362);
+            this.groupBox17.Size = new System.Drawing.Size(539, 446);
             this.groupBox17.TabIndex = 4;
             this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Food Infomation";
+            this.groupBox17.Text = "Customer OutputInfo To Vault";
             // 
             // toolStrip9
             // 
@@ -824,64 +792,66 @@ namespace PresentationLayer
             this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton9.Text = "toolStripButton3";
             // 
-            // dataGridView8
+            // gv_CustomerTabsOutputInfoData
             // 
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Location = new System.Drawing.Point(3, 44);
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.Size = new System.Drawing.Size(533, 312);
-            this.dataGridView8.TabIndex = 0;
+            this.gv_CustomerTabsOutputInfoData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gv_CustomerTabsOutputInfoData.Location = new System.Drawing.Point(3, 44);
+            this.gv_CustomerTabsOutputInfoData.Name = "gv_CustomerTabsOutputInfoData";
+            this.gv_CustomerTabsOutputInfoData.Size = new System.Drawing.Size(533, 396);
+            this.gv_CustomerTabsOutputInfoData.TabIndex = 0;
             // 
             // groupBox16
             // 
             this.groupBox16.Controls.Add(this.toolStrip8);
-            this.groupBox16.Controls.Add(this.dataGridView7);
+            this.groupBox16.Controls.Add(this.gv_CustomerDataSource);
             this.groupBox16.Location = new System.Drawing.Point(6, 6);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(443, 362);
             this.groupBox16.TabIndex = 3;
             this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Suplier Food To Vault";
+            this.groupBox16.Text = "Customer Infomation";
             // 
             // toolStrip8
             // 
             this.toolStrip8.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox8,
+            this.txt_searchCustomer,
             this.toolStripSeparator8,
-            this.toolStripButton8});
+            this.lbl_searchCustomer});
             this.toolStrip8.Location = new System.Drawing.Point(3, 16);
             this.toolStrip8.Name = "toolStrip8";
             this.toolStrip8.Size = new System.Drawing.Size(437, 25);
             this.toolStrip8.TabIndex = 1;
             this.toolStrip8.Text = "toolStrip8";
             // 
-            // toolStripTextBox8
+            // txt_searchCustomer
             // 
-            this.toolStripTextBox8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox8.Name = "toolStripTextBox8";
-            this.toolStripTextBox8.Size = new System.Drawing.Size(200, 25);
+            this.txt_searchCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_searchCustomer.Name = "txt_searchCustomer";
+            this.txt_searchCustomer.Size = new System.Drawing.Size(350, 25);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton8
+            // lbl_searchCustomer
             // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton8.Text = "toolStripButton2";
+            this.lbl_searchCustomer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.lbl_searchCustomer.Image = ((System.Drawing.Image)(resources.GetObject("lbl_searchCustomer.Image")));
+            this.lbl_searchCustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.lbl_searchCustomer.Name = "lbl_searchCustomer";
+            this.lbl_searchCustomer.Size = new System.Drawing.Size(23, 22);
+            this.lbl_searchCustomer.Text = "toolStripButton2";
+            this.lbl_searchCustomer.Click += new System.EventHandler(this.lbl_searchCustomer_Click);
             // 
-            // dataGridView7
+            // gv_CustomerDataSource
             // 
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(3, 44);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.Size = new System.Drawing.Size(437, 312);
-            this.dataGridView7.TabIndex = 0;
+            this.gv_CustomerDataSource.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gv_CustomerDataSource.Location = new System.Drawing.Point(3, 44);
+            this.gv_CustomerDataSource.Name = "gv_CustomerDataSource";
+            this.gv_CustomerDataSource.Size = new System.Drawing.Size(437, 312);
+            this.gv_CustomerDataSource.TabIndex = 0;
+            this.gv_CustomerDataSource.SelectionChanged += new System.EventHandler(this.gv_CustomerDataSource_SelectionChanged);
             // 
             // tabPage2
             // 
@@ -1293,9 +1263,11 @@ namespace PresentationLayer
             this.Text = "Food Management Warehouse";
             this.Load += new System.EventHandler(this.FrmFoodManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gv_Food)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_avatar)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_avatar)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -1318,18 +1290,17 @@ namespace PresentationLayer
             this.toolStrip6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            this.groupBox19.ResumeLayout(false);
             this.groupBox18.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             this.toolStrip9.ResumeLayout(false);
             this.toolStrip9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_CustomerTabsOutputInfoData)).EndInit();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             this.toolStrip8.ResumeLayout(false);
             this.toolStrip8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_CustomerDataSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
@@ -1419,26 +1390,22 @@ namespace PresentationLayer
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.GroupBox groupBox19;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
         private System.Windows.Forms.GroupBox groupBox18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button btn_deleteCustomer;
+        private System.Windows.Forms.Button btn_updateCustomer;
+        private System.Windows.Forms.Button btn_addCustomer;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.ToolStrip toolStrip9;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox9;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
-        private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.DataGridView gv_CustomerTabsOutputInfoData;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.ToolStrip toolStrip8;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox8;
+        private System.Windows.Forms.ToolStripTextBox txt_searchCustomer;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
-        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.ToolStripButton lbl_searchCustomer;
+        private System.Windows.Forms.DataGridView gv_CustomerDataSource;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
@@ -1479,5 +1446,6 @@ namespace PresentationLayer
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.ToolStripStatusLabel Status;
     }
 }

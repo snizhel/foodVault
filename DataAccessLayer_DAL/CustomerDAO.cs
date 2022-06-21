@@ -2,14 +2,30 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer_DAL
 {
     public class CustomerDAO : GeneralDAO
     {
+        public List<Customer> getAllCustomers()
+        {
+            List<Customer> lst = new List<Customer>();
+
+            DataSet ds = getAll("Customer");
+            DataTable dt = ds.Tables[0];
+            foreach (DataRow dr in dt.Rows)
+            {
+                Customer customer = new Customer()
+                {
+                    CustomerId = int.Parse(dr["CustomerId"].ToString()),
+                    DisplayNameCustomer = dr["DisplayNameFood"].ToString()
+                };
+                lst.Add(customer);
+            }
+
+            return lst;
+
+        }
         public DataSet getAllCustomer()
         {
             return getAll("Customer");
@@ -27,7 +43,7 @@ namespace DataAccessLayer_DAL
             return dr;
         }
 
-        public int deleteCustomer(string id)
+        public int deleteCustomer(int id)
         {
             try
             {
@@ -47,11 +63,12 @@ namespace DataAccessLayer_DAL
             try
             {
                 string sql = "update [Customer] set DisplayNameCustomer = '" + customer.DisplayNameCustomer + "', " +
-                             "Address = '" + customer.Address + "', " +
-                             "Phone = '" + customer.Phone + "', " +
-                             "Email = '" + customer.Email + "', " +
-                             "MoreInfo = '" + customer.MoreInfo + "' " +
-                             "where CustomerId = '" + customer.CustomerId + "' ";
+                                                 "Address = '" + customer.Address + "', " +
+                                                 "Phone = '" + customer.Phone + "', " +
+                                                 "Email = '" + customer.Email + "', " +
+                                                 "MoreInfo = '" + customer.MoreInfo + "', " +
+                                                 "ContractDate = '" + customer.ContractDate.ToString("MM/dd/yyyy") + "' " +
+                                                 "where CustomerId = '" + customer.CustomerId + "' ";
                 return insert_update_delete(sql);// -1 if error
             }
             catch (Exception ex)
@@ -64,10 +81,12 @@ namespace DataAccessLayer_DAL
 
         public int createCustomer(Customer customer)
         {
-            try{
-                string sql = "insert into [Customer] (CustomerId, DisplayNameCustomer, Address, Phone, Email, MoreInfo) " +
-                                 "values ('" + customer.CustomerId + "', '" + customer.DisplayNameCustomer + "', '" + customer.Address + "', '" + customer.Phone + "', '" + customer.Email + "', '" + customer.MoreInfo + "')";
+            try
+            {
+                string sql = "insert into [Customer] (DisplayNameCustomer, Address, Phone, Email, MoreInfo, ContractDate) " +
+                             "values ('" + customer.DisplayNameCustomer + "', '" + customer.Address + "', '" + customer.Phone + "', '" + customer.Email + "', '" + customer.MoreInfo + "', '" + customer.ContractDate.ToString("MM/dd/yyyy") + "')";
                 return insert_update_delete(sql);// -1 if error
+
             }
             catch (Exception ex)
             {

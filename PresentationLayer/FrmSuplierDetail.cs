@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PresentationLayer
 {
-    public partial class FrmAddSuplier : Form
+    public partial class FrmSuplierDetail : Form
     {
-        public FrmAddSuplier()
+        public FrmSuplierDetail()
         {
             InitializeComponent();
         }

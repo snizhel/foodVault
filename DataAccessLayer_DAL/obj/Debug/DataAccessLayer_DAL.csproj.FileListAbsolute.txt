@@ -34,3 +34,9 @@ C:\Users\nhphongphu\Desktop\foodVault\DataAccessLayer_DAL\obj\Debug\DataAccessLa
 C:\Users\nhphongphu\Desktop\foodVault\DataAccessLayer_DAL\obj\Debug\DataAccessLayer_DAL.dll
 C:\Users\nhphongphu\Desktop\foodVault\DataAccessLayer_DAL\obj\Debug\DataAccessLayer_DAL.pdb
 C:\Users\nhphongphu\Desktop\foodVault\DataAccessLayer_DAL\obj\Debug\DataAccessLayer_DAL.csproj.AssemblyReference.cache
+D:\Work\PTUDPM\foodVault\DataAccessLayer_DAL\bin\Debug\DataAccessLayer_DAL.dll
+D:\Work\PTUDPM\foodVault\DataAccessLayer_DAL\bin\Debug\DataAccessLayer_DAL.pdb
+D:\Work\PTUDPM\foodVault\DataAccessLayer_DAL\obj\Debug\DataAccessLayer_DAL.csproj.AssemblyReference.cache
+D:\Work\PTUDPM\foodVault\DataAccessLayer_DAL\obj\Debug\DataAccessLayer_DAL.csproj.CoreCompileInputs.cache
+D:\Work\PTUDPM\foodVault\DataAccessLayer_DAL\obj\Debug\DataAccessLayer_DAL.dll
+D:\Work\PTUDPM\foodVault\DataAccessLayer_DAL\obj\Debug\DataAccessLayer_DAL.pdb

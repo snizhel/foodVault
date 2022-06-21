@@ -52,3 +52,12 @@ C:\Users\nhphongphu\Desktop\foodVault\BussinessLogicLayer_BLL\bin\Debug\Bussines
 C:\Users\nhphongphu\Desktop\foodVault\BussinessLogicLayer_BLL\bin\Debug\DataAccessLayer_DAL.dll
 C:\Users\nhphongphu\Desktop\foodVault\BussinessLogicLayer_BLL\bin\Debug\DataAccessLayer_DAL.pdb
 C:\Users\nhphongphu\Desktop\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.csproj.CopyComplete
+D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\bin\Debug\BussinessLogicLayer_BLL.dll
+D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\bin\Debug\BussinessLogicLayer_BLL.pdb
+D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\bin\Debug\DataAccessLayer_DAL.dll
+D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\bin\Debug\DataAccessLayer_DAL.pdb
+D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.csproj.AssemblyReference.cache
+D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.csproj.CoreCompileInputs.cache
+D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.csproj.CopyComplete
+D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.dll
+D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.pdb
