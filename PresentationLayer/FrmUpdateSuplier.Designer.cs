@@ -1,7 +1,7 @@
 ﻿
 namespace PresentationLayer
 {
-    partial class FrmAddSuplier
+    partial class FrmUpdateSuplier
     {
         /// <summary>
         /// Required designer variable.
@@ -69,7 +69,7 @@ namespace PresentationLayer
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(374, 282);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Suplier Infomation Data";
             // 
@@ -89,7 +89,6 @@ namespace PresentationLayer
             this.btn_CloseFrm.TabIndex = 13;
             this.btn_CloseFrm.Text = "Cancel";
             this.btn_CloseFrm.UseVisualStyleBackColor = true;
-            this.btn_CloseFrm.Click += new System.EventHandler(this.btn_CloseFrm_Click);
             // 
             // btn_Save
             // 
@@ -202,7 +201,7 @@ namespace PresentationLayer
             this.statusStrip.Location = new System.Drawing.Point(0, 284);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(398, 22);
-            this.statusStrip.TabIndex = 1;
+            this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "statusStrip1";
             // 
             // statusNotification
@@ -211,16 +210,16 @@ namespace PresentationLayer
             this.statusNotification.Size = new System.Drawing.Size(39, 17);
             this.statusNotification.Text = "Status";
             // 
-            // FrmAddSuplier
+            // FrmUpdateSuplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 306);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FrmAddSuplier";
-            this.Text = "FrmAddSuplier";
-            this.Load += new System.EventHandler(this.FrmSuplierDetail_Load);
+            this.Name = "FrmUpdateSuplier";
+            this.Text = "FrmUpdateSuplier";
+            this.Load += new System.EventHandler(this.FrmUpdateSuplier_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.statusStrip.ResumeLayout(false);
@@ -233,6 +232,9 @@ namespace PresentationLayer
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dt_ContactDate;
+        private System.Windows.Forms.Button btn_CloseFrm;
+        private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -244,9 +246,6 @@ namespace PresentationLayer
         private System.Windows.Forms.TextBox txt_SuplierPhoneNumber;
         private System.Windows.Forms.TextBox txt_SuplierAddress;
         private System.Windows.Forms.TextBox txt_SuplierName;
-        private System.Windows.Forms.Button btn_CloseFrm;
-        private System.Windows.Forms.Button btn_Save;
-        private System.Windows.Forms.DateTimePicker dt_ContactDate;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel statusNotification;
     }

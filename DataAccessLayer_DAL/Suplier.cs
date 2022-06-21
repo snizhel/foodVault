@@ -15,7 +15,7 @@ namespace DataAccessLayer_DAL
         public string Phone { get; set; }
         public string Email { get; set; }
         public string MoreInfo { get; set; }
-        public DateTime ContactDate { get; set; }
+        public DateTime ContractDate { get; set; }
 
         //constructor
         public Suplier() { }

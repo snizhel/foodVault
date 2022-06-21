@@ -34,11 +34,23 @@ namespace DataAccessLayer_DAL
         {
             return getAll("Food");
         }
+
+
         public DataSet searchByName(string name)
         {
             return search("Food", "DisplayName like '%" + name + "%' or " +
                                       "DisplayName like '%" + name + "%' ");
         }
+
+
+        public DataSet searchBySuplierId(int id)
+        {
+            return search("Food", "IdSuplier like '%" + id + "%' or " +
+                                      "IdSuplier like '%" + id + "%' ");
+        }
+
+
+
         public SqlDataReader findById(string id)
         {
             getConnection();

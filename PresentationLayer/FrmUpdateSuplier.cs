@@ -13,20 +13,22 @@ using System.Windows.Forms;
 
 namespace PresentationLayer
 {
-    public partial class FrmAddSuplier : Form
+    public partial class FrmUpdateSuplier : Form
     {
 
         SupilerManagement supilerManagement = new SupilerManagement();
 
         private readonly FrmFoodManagement frmFoodManagement1;
 
-        public FrmAddSuplier(FrmFoodManagement frmFoodManagement)
+
+        public FrmUpdateSuplier(FrmFoodManagement frmFoodManagement)
         {
             InitializeComponent();
             frmFoodManagement1 = frmFoodManagement;
+
         }
 
-        private void FrmSuplierDetail_Load(object sender, EventArgs e)
+        private void FrmUpdateSuplier_Load(object sender, EventArgs e)
         {
             loadSuplierDetail();
         }
@@ -34,7 +36,7 @@ namespace PresentationLayer
         private void loadSuplierDetail()
         {
             SqlDataReader drSuplier = supilerManagement.getDatails(FrmFoodManagement.suplierId.ToString());
-            if(drSuplier.Read())
+            if (drSuplier.Read())
             {
                 txt_SuplierName.Text = drSuplier.GetString(1);
                 txt_SuplierAddress.Text = drSuplier.GetString(2);
@@ -50,6 +52,7 @@ namespace PresentationLayer
         {
             Suplier newSuplier = new Suplier()
             {
+                Id = FrmFoodManagement.suplierId,
                 DisplayName = txt_SuplierName.Text.Trim(),
                 Address = txt_SuplierAddress.Text.Trim(),
                 Phone = txt_SuplierPhoneNumber.Text.Trim(),
@@ -57,7 +60,7 @@ namespace PresentationLayer
                 MoreInfo = txt_SuplierMoreInfo.Text.Trim(),
                 ContractDate = dt_ContactDate.Value
             };
-            int result = supilerManagement.AddSuplier(newSuplier);
+            int result = supilerManagement.UpdateSuplier(newSuplier);
             if (result < 0)
             {
                 statusNotification.Text = "Fail!";
@@ -68,15 +71,5 @@ namespace PresentationLayer
                 statusNotification.Text = "Successfully!";
             }
         }
-
-        private void btn_CloseFrm_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
-
-
-
     }
 }

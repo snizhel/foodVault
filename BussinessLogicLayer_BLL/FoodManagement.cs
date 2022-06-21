@@ -17,9 +17,16 @@ namespace BussinessLogicLayer_BLL
         {
             return foodDAO.getAllFood();
         }
+
+
         public DataSet searchByName(string name)
         {
             return foodDAO.searchByName(name);
+        }
+
+        public DataSet listFoodById(int id)
+        {
+            return foodDAO.searchBySuplierId(id);
         }
 
 
@@ -51,7 +58,7 @@ namespace BussinessLogicLayer_BLL
         //    return foodDAO.createFood(emp);
 
         //}
-        public int RemoveEmployee(string id)
+        public int RemoveFood(string id)
         {
             // check valid
 

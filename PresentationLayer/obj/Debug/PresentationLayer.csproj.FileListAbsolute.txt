@@ -99,3 +99,4 @@ C:\Users\nhphongphu\Desktop\foodVault\PresentationLayer\obj\Debug\PresentationLa
 C:\Users\nhphongphu\Desktop\foodVault\PresentationLayer\obj\Debug\PresentationLayer.exe
 C:\Users\nhphongphu\Desktop\foodVault\PresentationLayer\obj\Debug\PresentationLayer.pdb
 C:\Users\nhphongphu\Desktop\foodVault\PresentationLayer\obj\Debug\PresentationLayer.FrmAddSuplier.resources
+C:\Users\nhphongphu\Desktop\foodVault\PresentationLayer\obj\Debug\PresentationLayer.FrmUpdateSuplier.resources

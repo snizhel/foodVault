@@ -69,21 +69,21 @@ namespace PresentationLayer
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btn_DeleteSuplier = new System.Windows.Forms.Button();
+            this.btn_UpdateSuplier = new System.Windows.Forms.Button();
             this.btn_AddSuplier = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.toolStrip7 = new System.Windows.Forms.ToolStrip();
             this.toolStripTextBox7 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.gv_SuplierTabsFoodData = new System.Windows.Forms.DataGridView();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.toolStrip6 = new System.Windows.Forms.ToolStrip();
             this.toolStripTextBox6 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.gv_SuplierDataSource = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.button22 = new System.Windows.Forms.Button();
@@ -162,10 +162,10 @@ namespace PresentationLayer
             this.groupBox14.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.toolStrip7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_SuplierTabsFoodData)).BeginInit();
             this.groupBox12.SuspendLayout();
             this.toolStrip6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_SuplierDataSource)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.groupBox18.SuspendLayout();
@@ -550,8 +550,8 @@ namespace PresentationLayer
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.button13);
-            this.groupBox14.Controls.Add(this.button14);
+            this.groupBox14.Controls.Add(this.btn_DeleteSuplier);
+            this.groupBox14.Controls.Add(this.btn_UpdateSuplier);
             this.groupBox14.Controls.Add(this.btn_AddSuplier);
             this.groupBox14.Location = new System.Drawing.Point(6, 374);
             this.groupBox14.Name = "groupBox14";
@@ -560,23 +560,25 @@ namespace PresentationLayer
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Function";
             // 
-            // button13
+            // btn_DeleteSuplier
             // 
-            this.button13.Location = new System.Drawing.Point(182, 29);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(129, 34);
-            this.button13.TabIndex = 2;
-            this.button13.Text = "Delete";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btn_DeleteSuplier.Location = new System.Drawing.Point(182, 29);
+            this.btn_DeleteSuplier.Name = "btn_DeleteSuplier";
+            this.btn_DeleteSuplier.Size = new System.Drawing.Size(129, 34);
+            this.btn_DeleteSuplier.TabIndex = 2;
+            this.btn_DeleteSuplier.Text = "Delete";
+            this.btn_DeleteSuplier.UseVisualStyleBackColor = true;
+            this.btn_DeleteSuplier.Click += new System.EventHandler(this.btn_DeleteSuplier_Click);
             // 
-            // button14
+            // btn_UpdateSuplier
             // 
-            this.button14.Location = new System.Drawing.Point(92, 29);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(84, 34);
-            this.button14.TabIndex = 1;
-            this.button14.Text = "Update";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btn_UpdateSuplier.Location = new System.Drawing.Point(92, 29);
+            this.btn_UpdateSuplier.Name = "btn_UpdateSuplier";
+            this.btn_UpdateSuplier.Size = new System.Drawing.Size(84, 34);
+            this.btn_UpdateSuplier.TabIndex = 1;
+            this.btn_UpdateSuplier.Text = "Update";
+            this.btn_UpdateSuplier.UseVisualStyleBackColor = true;
+            this.btn_UpdateSuplier.Click += new System.EventHandler(this.btn_UpdateSuplier_Click);
             // 
             // btn_AddSuplier
             // 
@@ -591,7 +593,7 @@ namespace PresentationLayer
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.toolStrip7);
-            this.groupBox13.Controls.Add(this.dataGridView6);
+            this.groupBox13.Controls.Add(this.gv_SuplierTabsFoodData);
             this.groupBox13.Location = new System.Drawing.Point(455, 6);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(539, 362);
@@ -631,18 +633,18 @@ namespace PresentationLayer
             this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton7.Text = "toolStripButton3";
             // 
-            // dataGridView6
+            // gv_SuplierTabsFoodData
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(3, 44);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(533, 312);
-            this.dataGridView6.TabIndex = 0;
+            this.gv_SuplierTabsFoodData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gv_SuplierTabsFoodData.Location = new System.Drawing.Point(3, 44);
+            this.gv_SuplierTabsFoodData.Name = "gv_SuplierTabsFoodData";
+            this.gv_SuplierTabsFoodData.Size = new System.Drawing.Size(533, 312);
+            this.gv_SuplierTabsFoodData.TabIndex = 0;
             // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.toolStrip6);
-            this.groupBox12.Controls.Add(this.dataGridView5);
+            this.groupBox12.Controls.Add(this.gv_SuplierDataSource);
             this.groupBox12.Location = new System.Drawing.Point(6, 6);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(443, 362);
@@ -682,13 +684,14 @@ namespace PresentationLayer
             this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton6.Text = "toolStripButton2";
             // 
-            // dataGridView5
+            // gv_SuplierDataSource
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(3, 44);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(437, 312);
-            this.dataGridView5.TabIndex = 0;
+            this.gv_SuplierDataSource.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gv_SuplierDataSource.Location = new System.Drawing.Point(3, 44);
+            this.gv_SuplierDataSource.Name = "gv_SuplierDataSource";
+            this.gv_SuplierDataSource.Size = new System.Drawing.Size(437, 312);
+            this.gv_SuplierDataSource.TabIndex = 0;
+            this.gv_SuplierDataSource.SelectionChanged += new System.EventHandler(this.gv_SuplierDataSource_SelectionChanged);
             // 
             // tabPage5
             // 
@@ -1311,12 +1314,12 @@ namespace PresentationLayer
             this.groupBox13.PerformLayout();
             this.toolStrip7.ResumeLayout(false);
             this.toolStrip7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_SuplierTabsFoodData)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.toolStrip6.ResumeLayout(false);
             this.toolStrip6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_SuplierDataSource)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.groupBox19.ResumeLayout(false);
             this.groupBox18.ResumeLayout(false);
@@ -1403,21 +1406,21 @@ namespace PresentationLayer
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btn_DeleteSuplier;
+        private System.Windows.Forms.Button btn_UpdateSuplier;
         private System.Windows.Forms.Button btn_AddSuplier;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.ToolStrip toolStrip7;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridView gv_SuplierTabsFoodData;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.ToolStrip toolStrip6;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView gv_SuplierDataSource;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.Button button22;

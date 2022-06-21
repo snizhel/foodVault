@@ -17,9 +17,18 @@ namespace PresentationLayer
 {
     public partial class FrmFoodManagement : Form
     {
+        SupilerManagement supilerManagement = new SupilerManagement();
+        FoodManagement foodManagement = new FoodManagement();
 
-        FoodManagement mngFood = new FoodManagement();
+
         BindingSource bs;
+        BindingSource bindingSuplierData = new BindingSource();
+
+
+        //Init variable
+        public static int suplierId;
+
+
         public FrmFoodManagement()
         {
             InitializeComponent();
@@ -27,13 +36,17 @@ namespace PresentationLayer
 
         private void FrmFoodManagement_Load(object sender, EventArgs e)
         {
-            DataSet ds = mngFood.ViewFoods();
+            loadFoodData();
+            loadSuplierData();
+        }
+
+       private void loadFoodData()
+        {
+            DataSet ds = foodManagement.ViewFoods();
             bs = new BindingSource();
             bs.DataSource = ds.Tables[0];
             gv_Food.DataSource = bs;
         }
-
-       
 
         private void txt_idfood_Validating(object sender, CancelEventArgs e)
         {
@@ -42,7 +55,7 @@ namespace PresentationLayer
             {
                 errorProvider1.SetError(txt_idfood, "ID is not left blank!");
             }
-            else if (mngFood.isExistIdFood(txt_idfood.Text))
+            else if (foodManagement.isExistIdFood(txt_idfood.Text))
             {
                 errorProvider1.SetError(txt_idfood, "ID existed!!!");
             }
@@ -124,10 +137,63 @@ namespace PresentationLayer
 
 
         //Tabs Suplier
+
+        public void loadSuplierData()
+        {
+            DataSet ds = supilerManagement.ViewSupilers();
+            bindingSuplierData.DataSource = ds.Tables[0];
+            gv_SuplierDataSource.DataSource = bindingSuplierData;
+        }
+
+        private void loadFoodDataSuplierTabs()
+        {
+            BindingSource bindingSource = new BindingSource();
+            DataSet dsFood = foodManagement.listFoodById(suplierId);
+            bindingSource.DataSource = dsFood.Tables[0];
+            gv_SuplierTabsFoodData.DataSource = bindingSource;
+        }
+
+
         private void btn_AddSuplier_Click(object sender, EventArgs e)
         {
-            FrmAddSuplier frmAddSuplier = new FrmAddSuplier();
+            FrmAddSuplier frmAddSuplier = new FrmAddSuplier(this);
             frmAddSuplier.Show();
+        }
+
+        private void gv_SuplierDataSource_SelectionChanged(object sender, EventArgs e)
+        {
+            if (gv_SuplierDataSource.SelectedRows.Count > 0)
+            {
+                suplierId = int.Parse(gv_SuplierDataSource.SelectedRows[0].Cells["Id"].Value.ToString());
+                loadFoodDataSuplierTabs();
+
+            }
+
+        }
+
+        private void btn_UpdateSuplier_Click(object sender, EventArgs e)
+        {
+            FrmUpdateSuplier frmUpdateSuplier = new FrmUpdateSuplier(this);
+            frmUpdateSuplier.Show();
+        }
+
+        private void btn_DeleteSuplier_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to delete?", "CONFIRMATION", MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                int result = supilerManagement.DeleteSuplier(suplierId);
+                if (result < 0)
+                {
+                    MessageBox.Show("Can not delete Item!");
+                }
+                else
+                {
+                    loadSuplierData();
+                    MessageBox.Show("Successful!");
+                }
+            }
+            else MessageBox.Show("Nothing be changed!");
         }
     }
 }

@@ -31,7 +31,7 @@ namespace DataAccessLayer_DAL
             return dr;
         }
 
-        public int deleteSuplier(string id)
+        public int deleteSuplier(int id)
         {
             try
             {
@@ -54,7 +54,7 @@ namespace DataAccessLayer_DAL
                                                  "Address = '" + suplier.Address + "', " +
                                                  "Phone = '" + suplier.Phone + "', " +
                                                  "Email = '" + suplier.Email + "', " +
-                                                 "ContactDate = '" + suplier.ContactDate + "' " +
+                                                 "ContractDate = '" + suplier.ContractDate + "' " +
                                                  "where Id = '" + suplier.Id + "' ";
                 return insert_update_delete(sql);// -1 if error
             }
@@ -70,8 +70,8 @@ namespace DataAccessLayer_DAL
         {
             try
             {
-                string sql = "insert into [Suplier] (DisplayName, Address, Phone, Email, ContactDate) " +
-                             "values ('" + suplier.DisplayName + "', '" + suplier.Address + "', '" + suplier.Phone + "', '" + suplier.Email + "', '" + suplier.ContactDate + "')";
+                string sql = "insert into [Suplier] (DisplayName, Address, Phone, Email, MoreInfo, ContractDate) " +
+                             "values ('" + suplier.DisplayName + "', '" + suplier.Address + "', '" + suplier.Phone + "', '" + suplier.Email + "', '" + suplier.MoreInfo + "', '" + suplier.ContractDate.ToString("MM/dd/yyyy") + "')";
                 return insert_update_delete(sql);// -1 if error
 
             }
