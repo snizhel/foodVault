@@ -1,4 +1,5 @@
 ﻿using BussinessLogicLayer_BLL;
+using DataAccessLayer_DAL;
 using System;
 using System.ComponentModel;
 using System.Data;
@@ -204,5 +205,83 @@ namespace PresentationLayer
             loadCustomerData();
         }
 
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            Food food = new Food()
+            {
+                FoodId = 0,
+                DisplayNameFood = txt_namefood.Text,
+                Quantity = int.Parse(txt_quantity.Text),
+                Image = "1.png",
+                IDSuplier = int.Parse(txt_idsuplier.Text),
+                StartDate = date_start.Value,
+                EndDate = date_end.Value
+
+            };
+            int result = foodManagement.AddFood(food);
+            if (result < 0)
+            {
+                Status.Text = "Food have inventory!!!";
+            }
+            else
+            {
+                Status.Text = "Add done !!!";
+            }
+            loadFoodData();
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            Food food = new Food()
+            {
+                FoodId = int.Parse(txt_idfood.Text.Trim()),
+                DisplayNameFood = txt_namefood.Text.Trim(),
+                Quantity = int.Parse(txt_quantity.Text.Trim()),
+                Image = "1.png",
+                IDSuplier = int.Parse(txt_idsuplier.Text.Trim()),
+                StartDate = date_start.Value,
+                EndDate = date_end.Value
+
+            };
+            int result = foodManagement.UpdateFood(food);
+            if (result < 0)
+            {
+                Status.Text = "Food have inventory!!!";
+            }
+            else
+            {
+                Status.Text = "Update done !!!";
+            }
+            loadFoodData();
+        }
+
+        private void gv_Food_SelectionChanged(object sender, EventArgs e)
+        {
+            if (gv_Food.SelectedRows.Count > 0)
+            {
+                txt_idfood.Text = gv_Food.SelectedRows[0].Cells["FoodId"].Value.ToString();
+                txt_namefood.Text = gv_Food.SelectedRows[0].Cells["DisplayNameFood"].Value.ToString();
+                txt_quantity.Text = gv_Food.SelectedRows[0].Cells["Quantity"].Value.ToString();
+                txt_idsuplier.Text = gv_Food.SelectedRows[0].Cells["IDSuplier"].Value.ToString();
+                date_start.Value = DateTime.Parse(gv_Food.SelectedRows[0].Cells["DateOfManufacture"].Value.ToString());
+                date_end.Value = DateTime.Parse(gv_Food.SelectedRows[0].Cells["ExpirationDate"].Value.ToString());
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            int result = foodManagement.RemoveFood(int.Parse(txt_idfood.Text.Trim()));
+            if (result < 0)
+            {
+                Status.Text = "Food have inventory!!!";
+            }
+            else
+            {
+                Status.Text = "Delete done !!!";
+            }
+
+            loadFoodData();
+
+        }
     }
 }

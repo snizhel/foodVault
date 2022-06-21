@@ -61,3 +61,12 @@ D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_B
 D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.csproj.CopyComplete
 D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.dll
 D:\Work\PTUDPM\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.pdb
+C:\Users\fangi\Downloads\New folder\foodVault\BussinessLogicLayer_BLL\bin\Debug\BussinessLogicLayer_BLL.dll
+C:\Users\fangi\Downloads\New folder\foodVault\BussinessLogicLayer_BLL\bin\Debug\BussinessLogicLayer_BLL.pdb
+C:\Users\fangi\Downloads\New folder\foodVault\BussinessLogicLayer_BLL\bin\Debug\DataAccessLayer_DAL.dll
+C:\Users\fangi\Downloads\New folder\foodVault\BussinessLogicLayer_BLL\bin\Debug\DataAccessLayer_DAL.pdb
+C:\Users\fangi\Downloads\New folder\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.csproj.AssemblyReference.cache
+C:\Users\fangi\Downloads\New folder\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.csproj.CoreCompileInputs.cache
+C:\Users\fangi\Downloads\New folder\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.csproj.CopyComplete
+C:\Users\fangi\Downloads\New folder\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.dll
+C:\Users\fangi\Downloads\New folder\foodVault\BussinessLogicLayer_BLL\obj\Debug\BussinessLogicLayer_BLL.pdb

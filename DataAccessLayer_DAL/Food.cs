@@ -9,7 +9,7 @@ namespace DataAccessLayer_DAL
     public class Food
     {
         //properties
-        public string FoodId { get; set; }
+        public int FoodId { get; set; }
         public string DisplayNameFood { get; set; }
         public int Quantity { get; set; }
         public string Image { get; set; }

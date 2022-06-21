@@ -199,6 +199,7 @@ namespace PresentationLayer
             this.gv_Food.Name = "gv_Food";
             this.gv_Food.Size = new System.Drawing.Size(598, 307);
             this.gv_Food.TabIndex = 0;
+            this.gv_Food.SelectionChanged += new System.EventHandler(this.gv_Food_SelectionChanged);
             // 
             // statusStrip1
             // 
@@ -446,6 +447,7 @@ namespace PresentationLayer
             this.btn_delete.TabIndex = 2;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_update
             // 
@@ -455,6 +457,7 @@ namespace PresentationLayer
             this.btn_update.TabIndex = 1;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_add
             // 
@@ -464,6 +467,7 @@ namespace PresentationLayer
             this.btn_add.TabIndex = 0;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // imageList1
             // 

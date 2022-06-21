@@ -120,3 +120,24 @@ D:\Work\PTUDPM\foodVault\PresentationLayer\obj\Debug\PresentationLayer.pdb
 D:\Work\PTUDPM\foodVault\PresentationLayer\obj\Debug\PresentationLayer.FrmSuplierDetail.resources
 D:\Work\PTUDPM\foodVault\PresentationLayer\obj\Debug\PresentationLayer.FrmAddCustomer.resources
 D:\Work\PTUDPM\foodVault\PresentationLayer\obj\Debug\PresentationLayer.FrmUpdateCustomer.resources
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\bin\Debug\PresentationLayer.exe.config
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\bin\Debug\PresentationLayer.exe
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\bin\Debug\PresentationLayer.pdb
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\bin\Debug\BussinessLogicLayer_BLL.dll
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\bin\Debug\DataAccessLayer_DAL.dll
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\bin\Debug\BussinessLogicLayer_BLL.pdb
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\bin\Debug\DataAccessLayer_DAL.pdb
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.csproj.AssemblyReference.cache
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.csproj.SuggestedBindingRedirects.cache
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.FrmAddCustomer.resources
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.FrmSuplierDetail.resources
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.FrmFoodManagement.resources
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.FrmRegister.resources
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.FrmSignIn.resources
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.FrmUpdateCustomer.resources
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.Properties.Resources.resources
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.csproj.GenerateResource.cache
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.csproj.CoreCompileInputs.cache
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.csproj.CopyComplete
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.exe
+C:\Users\fangi\Downloads\New folder\foodVault\PresentationLayer\obj\Debug\PresentationLayer.pdb

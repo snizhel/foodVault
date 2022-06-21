@@ -1,9 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Data;
 using System.Data.SqlClient;
 
@@ -21,7 +19,7 @@ namespace DataAccessLayer_DAL
             {
                 Food acc = new Food()
                 {
-                    FoodId = dr["FoodId"].ToString(),
+                    FoodId = int.Parse(dr["FoodId"].ToString()),
                     DisplayNameFood = dr["DisplayNameFood"].ToString()
                 };
                 lst.Add(acc);
@@ -42,7 +40,7 @@ namespace DataAccessLayer_DAL
         public SqlDataReader findById(string id)
         {
             getConnection();
-            SqlDataReader dr = findById("Food", " FoodId= '"+id+"' ");
+            SqlDataReader dr = findById("Food", " FoodId= '" + id + "' ");
             //closeConnection();
             return dr;
         }
@@ -66,9 +64,10 @@ namespace DataAccessLayer_DAL
             {
                 string sql = "update [Food] set DisplayNameFood = '" + food.DisplayNameFood + "', " +
                                                  "Quantity = '" + food.Quantity + "', " +
-                                                 "Image = '" + food.Image + "' " +
-                                                 "StartDate = '" + food.StartDate + "', " +
-                                                 "EndDate = '" + food.EndDate + "', " +
+                                                 "Image = '" + food.Image + "', " +
+                                                 "IdSuplier = '" + food.IDSuplier + "', " +
+                                                 "DateOfManufacture = '" + food.StartDate.ToString("MM/dd/yyyy") + "', " +
+                                                 "ExpirationDate = '" + food.EndDate.ToString("MM/dd/yyyy") + "' " +
                                                  "where FoodId = '" + food.FoodId + "' ";
                 return insert_update_delete(sql);// -1 if error
             }
@@ -78,9 +77,20 @@ namespace DataAccessLayer_DAL
                 return -1;
             }
         }
-        //public int createFood(Food food)
-        //{
-            
-        //}
+        public int createFood(Food food)
+        {
+            try
+            {
+                string sql = "insert into [Food] (DisplayNameFood,Quantity,Image,IdSuplier,DateOfManufacture,ExpirationDate)" +
+                    "values ('" + food.DisplayNameFood + "','" + food.Quantity + "','" + food.Image + "','" + food.IDSuplier + "','" + food.StartDate.ToString("MM/dd/yyyy") + "','" + food.EndDate.ToString("MM/dd/yyyy") + "')";
+                return insert_update_delete(sql);// -1 if error
+            }
+            catch (Exception ex)
+            {
+                //log
+                return -1;
+            }
+
+        }
     }
 }

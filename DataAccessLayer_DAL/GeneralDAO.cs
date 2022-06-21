@@ -7,7 +7,7 @@ namespace DataAccessLayer_DAL
     {
         //public string connectionString = "Data source=.; user id =sa; " +
         //        "password=1; initial catalog =ProjectQLKTP12";
-        public string connectionString = "Data source=DESKTOP-8ID1E1D\\DUYJOHANNES; user id =sa; " +
+        public string connectionString = "Data source=DESKTOP-KNVRHQ2; user id =sa; " +
                 "password=1; initial catalog =ProjectQLKTPDB";
         SqlConnection con = null;
 

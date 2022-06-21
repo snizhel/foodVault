@@ -31,7 +31,7 @@ namespace PresentationLayer
             {
                 FrmFoodManagement frmMain = new FrmFoodManagement();
                 frmMain.Show();
-                this.Hide();
+                //this.Hide();
             }
             else
             {
