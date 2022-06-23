@@ -55,7 +55,7 @@ namespace DataAccessLayer_DAL
         {
             try
             {
-                string sql = "delete [Food] where FoodId ='" + id + "' ";
+                string sql = "delete from Food where FoodId = '" + id + "' ";
                 return insert_update_delete(sql);// -1 if error
             }
             catch (Exception ex)

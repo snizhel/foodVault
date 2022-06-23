@@ -7,8 +7,8 @@ namespace DataAccessLayer_DAL
     {
         //public string connectionString = "Data source=.; user id =sa; " +
         //        "password=1; initial catalog =ProjectQLKTP12";
-        public string connectionString = "Data source=sql.bsite.net\\MSSQL2016; user id =duyhpk_FoodVault; " +
-                "password=123456; initial catalog =duyhpk_FoodVault";
+        public string connectionString = "Data source=DESKTOP-KNVRHQ2; user id =sa; " +
+                "password=123456; initial catalog =ProjectQLKTPDB";
         SqlConnection con = null;
 
         public DataSet getAll(string tblName)

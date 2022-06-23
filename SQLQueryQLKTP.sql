@@ -3,6 +3,7 @@ go
 
 use ProjectQLKTPDB
 go
+drop database ProjectQLKTPDB
 
 
 --Nhà cung cấp
@@ -98,8 +99,8 @@ create table InputInfo
 	InputPrice float default 0,
 	StatusInput nvarchar(max)
 
-	foreign key(IdFood) references Food(FoodId),
-	foreign key(IdInput) references Input(InputId)
+	foreign key(IdFood) references Food(FoodId) ON DELETE CASCADE,
+	foreign key(IdInput) references Input(InputId) ON DELETE CASCADE
 )
 go
 
@@ -125,8 +126,9 @@ create table OutputInfo
 	StatusOutput nvarchar(max)
 
 	foreign key(IdFood) references Food(FoodId),
-	foreign key(IdOutput) references Output(OutputId),
-	foreign key(IdInputInfo) references InputInfo(Id),
-	foreign key(IdCustomer) references Customer(CustomerId)
+	foreign key(IdOutput) references Output(OutputId) ON DELETE CASCADE,
+	foreign key(IdInputInfo) references InputInfo(Id) ON DELETE CASCADE,
+	foreign key(IdCustomer) references Customer(CustomerId) ON DELETE CASCADE
 )
 go
+drop table InputInfo

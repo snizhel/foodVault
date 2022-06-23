@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer_DAL
 {
@@ -28,6 +24,7 @@ namespace DataAccessLayer_DAL
             getConnection();
             SqlDataReader dr = findById("UserRole", " RoleId= '" + id + "' ");
             //closeConnection();
+
             return dr;
         }
 
@@ -46,7 +43,7 @@ namespace DataAccessLayer_DAL
         }
 
 
-       
+
     }
 
 
